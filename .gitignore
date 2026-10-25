@@ -12,6 +12,14 @@ override.tf.json
 *_override.tf
 *_override.tf.json
 
+# Terraform CLI configuration (may contain credentials)
+.terraformrc
+terraform.rc
+
+# Saved plans without a .tfplan extension
+tfplan
+tfplan.*
+
 # Environment variables and secrets
 .env
 .env.*
