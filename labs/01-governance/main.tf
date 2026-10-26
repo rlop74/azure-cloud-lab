@@ -11,6 +11,8 @@
 #   name     = random_pet.rg_name.id
 # }
 
+# RESOURCE GROUPS ===============================================
+
 resource "azurerm_resource_group" "dev" {
   location = var.resource_group_location
   name     = "rg-cloudlab-dev"
@@ -31,4 +33,76 @@ resource "azurerm_resource_group" "prod" {
     owner       = "cloud-admin"
     application = "cloudlab"
   }
+}
+
+# RBAC ASSIGNMENTS ===============================================
+
+# declare Microsoft Entra ID groups
+data "azuread_group" "cloud_admins" {
+  display_name     = "Cloud-Admin"
+  security_enabled = true
+}
+
+data "azuread_group" "cloud_engineers" {
+  display_name     = "Cloud-Engineers"
+  security_enabled = true
+}
+
+data "azuread_group" "developers" {
+  display_name     = "Developers"
+  security_enabled = true
+}
+
+data "azuread_group" "auditors" {
+  display_name     = "Auditors"
+  security_enabled = true
+}
+
+# Reference a target Resource Group scope (might not be needed since we already declared RGs)
+# data "azurerm_resource_group" "dev" {
+#   name = "rg-cloudlab-dev"
+# }
+
+# Create RBAC role assignment for prod environment
+resource "azurerm_role_assignment" "prod_rbac_cloud_admins" {
+  scope                = azurerm_resource_group.prod.id
+  role_definition_name = "Owner"
+  principal_id         = data.azuread_group.cloud_admins.object_id
+}
+
+resource "azurerm_role_assignment" "prod_rbac_cloud_engineers" {
+  scope                = azurerm_resource_group.prod.id
+  role_definition_name = "Contributor"
+  principal_id         = data.azuread_group.cloud_engineers.object_id
+}
+
+resource "azurerm_role_assignment" "prod_rbac_auditors" {
+  scope                = azurerm_resource_group.prod.id
+  role_definition_name = "Reader"
+  principal_id         = data.azuread_group.auditors.object_id
+}
+
+# create RBAC role assignment for dev environment 
+resource "azurerm_role_assignment" "dev_rbac_cloud_admins" {
+  scope                = azurerm_resource_group.dev.id
+  role_definition_name = "Owner"
+  principal_id         = data.azuread_group.cloud_admins.object_id
+}
+
+resource "azurerm_role_assignment" "dev_rbac_cloud_engineers" {
+  scope                = azurerm_resource_group.dev.id
+  role_definition_name = "Contributor"
+  principal_id         = data.azuread_group.cloud_engineers.object_id
+}
+
+resource "azurerm_role_assignment" "dev_rbac_developers" {
+  scope                = azurerm_resource_group.dev.id
+  role_definition_name = "Contributor"
+  principal_id         = data.azuread_group.developers.object_id
+}
+
+resource "azurerm_role_assignment" "dev_rbac_auditors" {
+  scope                = azurerm_resource_group.dev.id
+  role_definition_name = "Reader"
+  principal_id         = data.azuread_group.auditors.object_id
 }

@@ -9,3 +9,7 @@ variable "resource_group_location" {
 #   default     = "rg"
 #   description = "prefix of the resource group name that's combined with a random ID so name is unique"
 # }
+
+variable "tenant_id" {
+  type = string
+}
