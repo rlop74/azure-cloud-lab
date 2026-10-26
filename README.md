@@ -33,7 +33,7 @@ Development follows a **manual deployment → validation → Terraform automatio
 
 - [x] Manual governance deployment and validation
 - [x] Terraform resource groups
-- [ ] Terraform RBAC assignments
+- [x] Terraform RBAC assignments
 - [ ] Azure Policy and resource locks
 - [ ] Final validation and documentation
 
