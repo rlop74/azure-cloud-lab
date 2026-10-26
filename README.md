@@ -1,46 +1,49 @@
 # Azure Cloud Lab
 
-A personal hands-on project where I'm building and automating Azure cloud infrastructure while developing my cloud engineering skills.
+A hands-on Azure cloud engineering project focused on building and automating secure, production-inspired cloud infrastructure.
 
 ## Overview
 
-This repository contains practical Azure labs covering infrastructure, networking, security, governance, and automation.
+This project combines Azure infrastructure, networking, governance, security, and automation to build a reusable, Git-driven platform capable of deploying and operating a real application.
 
-I'm using these labs to apply what I'm learning from AZ-104, with a focus on deploying and managing infrastructure through code rather than relying entirely on the Azure Portal.
+Development follows a **manual deployment → validation → Terraform automation** approach, with individual labs eventually integrated into a complete infrastructure platform.
 
 ## Technologies
 
-- Microsoft Azure
-- Terraform
-- Azure CLI
-- PowerShell / Python
-- GitHub Actions (planned)
+- **Cloud:** Microsoft Azure
+- **Infrastructure as Code:** Terraform
+- **Automation:** Python, PowerShell, Azure CLI
+- **Application:** Docker, FastAPI, Azure Container Apps
+- **CI/CD:** GitHub Actions (planned)
+- **Monitoring:** Azure Monitor, Log Analytics (planned)
 
 ## Labs
 
-| Lab | Focus                             | Status      |
-| --- | --------------------------------- | ----------- |
-| 01  | Governance & Resource Management  | In Progress |
-| 02  | Azure Storage                     | Planned     |
-| 03  | Infrastructure as Code            | Planned     |
-| 04  | Azure Compute                     | Planned     |
-| 05  | Containers & App Hosting          | Planned     |
-| 06  | Azure Networking & Security       | Planned     |
-| 07  | DNS & Load Balancing              | Planned     |
-| 08  | Monitoring & Observability        | Planned     |
-| 09  | Backup & Disaster Recovery        | Planned     |
-| 10  | Infrastructure Automation & CI/CD | Planned     |
-
-## Goals
-
-- Build hands-on Azure infrastructure experience.
-- Learn Terraform and Infrastructure as Code.
-- Automate infrastructure deployment and management.
-- Apply cloud security and governance best practices.
-- Develop practical cloud engineering and troubleshooting skills.
+| Lab | Focus                            | Status      |
+| --- | -------------------------------- | ----------- |
+| 01  | Governance & Resource Management | In Progress |
+| 02  | Azure Storage                    | Planned     |
+| 03  | Azure Networking                 | Planned     |
+| 04  | Azure Compute                    | Planned     |
+| 05  | Monitoring & Observability       | Planned     |
 
 ## Current Progress
 
 **Lab 01 — Governance & Resource Management**
 
-Starting with resource groups, tagging, RBAC, Azure Policy, and cost management.
+- [x] Manual governance deployment and validation
+- [x] Terraform resource groups
+- [ ] Terraform RBAC assignments
+- [ ] Azure Policy and resource locks
+- [ ] Final validation and documentation
+
+## End Goal
+
+Deploy a secure Azure application environment using reusable Terraform modules, automated CI/CD pipelines, infrastructure monitoring, and Python/PowerShell automation.
+
+## Upcoming
+
+These will be added after the project is finished
+
+- Detailed technical documentation will be maintained within each lab's directory (links to individual lab documentation)
+- Architecture diagram.
