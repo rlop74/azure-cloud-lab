@@ -19,32 +19,29 @@ Development follows a **manual deployment → validation → Terraform automatio
 
 ## Labs
 
-| Lab | Focus                            | Status      |
-| --- | -------------------------------- | ----------- |
-| 01  | Governance & Resource Management | In Progress |
-| 02  | Azure Storage                    | Planned     |
-| 03  | Azure Networking                 | Planned     |
-| 04  | Azure Compute                    | Planned     |
-| 05  | Monitoring & Observability       | Planned     |
+| Lab | Focus                                                            | Status      |
+| --- | ---------------------------------------------------------------- | ----------- |
+| 01  | [Governance & Resource Management](labs/01-governance/README.md) | Completed   |
+| 02  | Azure Storage                                                    | In Progress |
+| 03  | Azure Networking                                                 | Planned     |
+| 04  | Azure Compute                                                    | Planned     |
+| 05  | Monitoring & Observability                                       | Planned     |
 
 ## Current Progress
 
-**Lab 01 — Governance & Resource Management**
+**Lab 02 — Azure Storage**
 
-- [x] Manual governance deployment and validation
-- [x] Terraform resource groups
-- [x] Terraform RBAC assignments
-- [x] Azure Policy and resource locks
-- [x] Final validation
-- [ ] Documentation, commit and cleanup
+- [ ] Manual storage deployment and configuration
+- [ ] Storage security and access controls
+- [ ] Storage functionality and validation
+- [ ] Terraform storage implementation
+- [ ] Final validation
+- [ ] Documentation, commit, and cleanup
 
 ## End Goal
 
 Deploy a secure Azure application environment using reusable Terraform modules, automated CI/CD pipelines, infrastructure monitoring, and Python/PowerShell automation.
 
-## Upcoming
-
-These will be added after the project is finished
-
-- Detailed technical documentation will be maintained within each lab's directory (links to individual lab documentation)
-- Architecture diagram.
+- Integrate individual labs into a complete Azure infrastructure platform.
+- Create an overall infrastructure architecture diagram.
+- Implement reusable Terraform modules and automated deployment workflows.
