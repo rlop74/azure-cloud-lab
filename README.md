@@ -22,19 +22,18 @@ Development follows a **manual deployment → validation → Terraform automatio
 | Lab | Focus                                                            | Status      |
 | --- | ---------------------------------------------------------------- | ----------- |
 | 01  | [Governance & Resource Management](labs/01-governance/README.md) | Completed   |
-| 02  | Azure Storage                                                    | In Progress |
-| 03  | Azure Networking                                                 | Planned     |
+| 02  | [Azure Storage](labs/02-storage/README.md)                       | Completed   |
+| 03  | Azure Networking                                                 | In Progress |
 | 04  | Azure Compute                                                    | Planned     |
 | 05  | Monitoring & Observability                                       | Planned     |
 
 ## Current Progress
 
-**Lab 02 — Azure Storage**
+**Lab 03 — Azure Networking**
 
-- [ ] Manual storage deployment and configuration
-- [ ] Storage security and access controls
-- [ ] Storage functionality and validation
-- [ ] Terraform storage implementation
+- [ ] Manual networking deployment and configuration
+- [ ] Network security and connectivity validation
+- [ ] Terraform networking implementation
 - [ ] Final validation
 - [ ] Documentation, commit, and cleanup
 
